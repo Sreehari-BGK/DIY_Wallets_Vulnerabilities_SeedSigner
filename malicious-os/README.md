@@ -25,7 +25,7 @@ Original sign function:
 ![snippet_3](add_link)
 
 Modified sign function;
-![snippet_3](add_link)
+![snippet_4](add_link)
 
 
 ## Working & Outcome 
