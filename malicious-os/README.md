@@ -14,18 +14,18 @@ The modification revolves around deriving the deterministic 'k' value from the h
 The following code snippets show the changes we made in the sign_ecdsa function.
 
 Original function to Sign Bitcoin Transactions:
-![snippet_1](add_link)
+![snippet_1](https://github.com/Sreehari-BGK/SeedSigner_Scripts/blob/main/malicious-os/snippet-images/snippet_1.png)
 
 Modified function to Sign Bitcoin Transactions: 
-![snippet_2](add_link)
+![snippet_2](https://github.com/Sreehari-BGK/SeedSigner_Scripts/blob/main/malicious-os/snippet-images/snippet_2.png)
 
 We also made the following changes to the sign function in the ec.py file to call our modified sign_ecdsa function specifically. 
 
 Original sign function:
-![snippet_3](add_link)
+![snippet_3](https://github.com/Sreehari-BGK/SeedSigner_Scripts/blob/main/malicious-os/snippet-images/snippet_3.png)
 
 Modified sign function;
-![snippet_4](add_link)
+![snippet_4](https://github.com/Sreehari-BGK/SeedSigner_Scripts/blob/main/malicious-os/snippet-images/snippet_4.png)
 
 
 ## Working & Outcome 
