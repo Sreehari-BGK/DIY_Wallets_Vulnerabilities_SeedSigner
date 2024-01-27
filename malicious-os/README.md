@@ -22,7 +22,9 @@ Modified function to Sign Bitcoin Transactions:
 We also made the following changes to the sign function in the ec.py file to call our modified sign_ecdsa function specifically. Both of the files in which these functions exist are also added in the "changed-embit-files" folder.
 
 Original sign function:
+
 ![snippet_3](https://github.com/Sreehari-BGK/SeedSigner_Scripts/blob/main/malicious-os/snippet-images/snippet_3.png)
+
 
 Modified sign function:
 ![snippet_4](https://github.com/Sreehari-BGK/SeedSigner_Scripts/blob/main/malicious-os/snippet-images/snippet_4.png)
