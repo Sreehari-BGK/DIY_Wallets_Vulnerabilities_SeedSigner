@@ -1,4 +1,7 @@
 # DIY Wallets Vulnerabilities SeedSigner
+How the SeedSigner works: https://www.hedgewithcrypto.com/seedsigner-review/
+
+
 Link to original SeedSigner OS repo: https://github.com/SeedSigner/seedsigner-os
 
 
