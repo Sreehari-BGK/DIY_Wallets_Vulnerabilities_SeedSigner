@@ -1,2 +1,6 @@
-# SeedSigner_Scripts
-Contains the Python notebooks of the script to calculate the private key from a single transaction.
+# DIY Wallets Vulnerabilities SeedSigner
+This repo contains:
+
+* Modified OS.
+* Modified embit Python library.
+* Python notebook of the script to calculate the private key from a single input single output transaction.
