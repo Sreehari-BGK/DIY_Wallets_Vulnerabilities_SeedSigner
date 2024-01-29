@@ -1,6 +1,6 @@
 # Breaking DIY Bitcoin Signing Device
 
-SeedSigner is a completely offline, stateless & air-gapped DIY Bitcoin Signing Device. It can be built using inexpensive, publicly available hardware components (usually < $50). SeedSigner helps users save with Bitcoin by assisting with trustless private key generation and multi-signature wallet setup, and helps users transact with Bitcoin via a secure, air-gapped QR-exchange signing model.
+SeedSigner is a completely offline, stateless & air-gapped DIY Bitcoin Signing Device. It can be built using inexpensive, publicly available hardware components (usually < $50). SeedSigner helps users save with Bitcoin by assisting with trustless private key generation and multi-signature wallet setup and helps users transact with Bitcoin via a secure, air-gapped QR-exchange signing model.
 
 How the SeedSigner works: https://www.hedgewithcrypto.com/seedsigner-review/
 
@@ -72,6 +72,35 @@ Modified sign function:
 The variables required to calculate the ‘k’ value, namely the message/transaction digest and the public key, are readily accessible to anyone. All we need are the transaction details and the address, which are easy to get from any block explorer. 
 
 In a scenario where a user conducts a transaction using SeedSigner with this malicious OS, an attacker can effortlessly trace the transaction by using the user's address. They can then calculate the nonce or 'k' value, obtain the transaction hash 'z', and directly access the signature from the witness section in native SegWit transactions. Both the 'r' and 's' values can be calculated or extracted.  This enables the attacker to derive and extract the private key used for signing from just a single transaction. The same is applicable and possible for all other types of transactions, too. 
+
+# Private Key Calculation From Signature
+
+## References 
+* Native P2WPKH transactions: https://github.com/bitcoin/bips/blob/master/bip-0143.mediawiki#native-p2wpkh
+* Constructing SegWit transactions: https://medium.com/coinmonks/creating-and-signing-a-segwit-transaction-from-scratch-ec98577b526a
+
+## Fetching the transaction using BlockCypher API 
+
+The full transaction details can be fetched using BlockCypher API using the transaction hash. 
+![script_snippet_1](https://github.com/Sreehari-BGK/DIY_Wallets_Vulnerabilities_SeedSigner/blob/main/scripts/snippet-images/script_snippet_1.png)
+
+The following code snippet shows how the message hash and signature are taken.
+![script_snippet_3](https://github.com/Sreehari-BGK/DIY_Wallets_Vulnerabilities_SeedSigner/blob/main/scripts/snippet-images/script_snippet_3.png)
+
+
+![script_snippet_2](https://github.com/Sreehari-BGK/DIY_Wallets_Vulnerabilities_SeedSigner/blob/main/scripts/snippet-images/script_snippet_2.png)
+
+## Calculating the private key
+
+The 'r' and 's' values are taken from the signature. The 'k' value is derived using the public key which is also taken from the transaction details fetched using the BlockCypher API. The following code snippet shows the algorithm to calculate the private key. 
+
+![script_snippet_4](https://github.com/Sreehari-BGK/DIY_Wallets_Vulnerabilities_SeedSigner/blob/main/scripts/snippet-images/script_snippet_4.png)
+
+Also, check out the full notebook -> scripts/private_key_calc_single_in_out_txn.ipynb for the full code for better understanding and direct use. 
+
+
+
+
 
 
 
