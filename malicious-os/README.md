@@ -2,13 +2,17 @@
 
 This malicious OS employs a custom 'embit' Python library, whose signing function has been modified to allow easy extraction of the private key after a transaction is signed using the function.
 
-
 ## Requirements
 
 * Modify the Python embit library functions that the SeedSigner uses for signing a PSBT.
 * Build the SeedSigner OS locally with this custom or modified embit library.
 
 ## Modified Functions
+
+For building the malicious software, we wanted to explore if there were ways in which someone could make changes in the original OS code without arousing user suspicion or detectable operational differences. Our findings and methodology are outlined below.
+
+For some background, during a Bitcoin transaction, a crucial element, the random nonce 'k,' is used in the signing function (ECDSA). This nonce is deterministically derived, following the RFC6979 algorithm, from the transaction digest and the private key involved in the signing process.
+
 The modification revolves around deriving the deterministic 'k' value from the hash of the public key. This approach is fundamentally unique since the public key itself originates directly from the private key. By combining the hashed public key with the message digest for nonce derivation, our modified OS consistently produces signatures that are both deterministic and distinct.
 
 The following code snippets show the changes we made in the sign_ecdsa function.
