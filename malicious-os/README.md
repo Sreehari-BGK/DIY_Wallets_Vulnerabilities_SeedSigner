@@ -35,8 +35,12 @@ Modified sign function:
 * First build the OS normally by following the SeedSigner build guide: https://github.com/SeedSigner/seedsigner-os/blob/main/docs/building.md
 * Install or download the embit library, make the necessary modification to the necessary files and copy paste the whole embit library folder to the '\src' path. It may look something like this depending on where your SeedSigner OS files are -> C:\dev\projects\seedsigner-os\opt\rootfs-overlay\opt\src.
 * Remove any calls to the embit library from the OS files, that is remove the embit-specific files from the external-packages folder, and also remove embit references from the pre-build, and post-build files of the board that you're using. This includes the following files:
+
+  
 ** 1) /opt/pi0-dev/board/post-build.sh 
 ** 2) /opt/pi0-dev/Config.in
+
+
   And same inside the pi0 folder (that is if the board you're using is the pi0 make changes in both pi0-dev and pi0)
 * Once these changes are made, then just build the OS locally. This OS should now be using the modified embit library. You can use the following command to build the OS:
 ** SS_ARGS="--pi0 --no-clean --skip-repo" docker-compose up --force-recreate --build
