@@ -17,11 +17,11 @@ The following code snippet shows how the message hash and signature are taken.
 
 ## Calculating the private key
 
-From the signature, the 'r' and 's' values are taken. The 'k' value is derived using the public key which is also taken from the transaction details fetched using the BlockCypher API. The following code snippet shows the algorithm to calculate the private key. 
+The 'r' and 's' values are taken from the signature. The 'k' value is derived using the public key which is also taken from the transaction details fetched using the BlockCypher API. The following code snippet shows the algorithm to calculate the private key. 
 
 ![script_snippet_4](https://github.com/Sreehari-BGK/DIY_Wallets_Vulnerabilities_SeedSigner/blob/main/scripts/snippet-images/script_snippet_4.png)
 
-Also check out the full notebook -> scripts/private_key_calc_single_in_out_txn.ipynb for the full code for better understanding and direct use. 
+Also, check out the full notebook -> scripts/private_key_calc_single_in_out_txn.ipynb for the full code for better understanding and direct use. 
 
 
 
