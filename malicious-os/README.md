@@ -37,7 +37,9 @@ Modified sign function:
 * Remove any calls to the embit library from the OS files, that is remove the embit-specific files from the external-packages folder, and also remove embit references from the pre-build, and post-build files of the board that you're using. This includes the following files:
   * /opt/pi0-dev/board/post-build.sh
   * /opt/pi0-dev/Config.in
-And same inside the pi0 folder (that is if the board you're using is the pi0 make changes in both pi0-dev and pi0)
+    
+  And same inside the pi0 folder (that is if the board you're using is the pi0 make changes in both pi0-dev and pi0).
+  
 * Once these changes are made, then just build the OS locally. This OS should now be using the modified embit library. You can use the following command to build the OS:
   * SS_ARGS="--pi0 --no-clean --skip-repo" docker-compose up --force-recreate --build
 
