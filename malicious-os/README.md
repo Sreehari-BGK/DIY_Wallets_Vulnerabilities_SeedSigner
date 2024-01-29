@@ -19,6 +19,8 @@ Original function to sign Bitcoin transactions:
 Modified function to sign Bitcoin transactions: 
 ![snippet_2](https://github.com/Sreehari-BGK/SeedSigner_Scripts/blob/main/malicious-os/snippet-images/snippet_2.png)
 
+Here the get_pubkey() will give the uncompressed public key derived from the private key, which will be then hashed and sent as input to the 'k' derivation function.  
+
 We also made the following changes to the sign function in the ec.py file to call our modified sign_ecdsa function specifically. Both of the files in which these functions exist are also added in the "changed-embit-files" folder.
 
 Original sign function:
